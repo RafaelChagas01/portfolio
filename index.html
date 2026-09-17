@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rafael Chagas | Desenvolvedor fullstack</title>
-  <meta name="description" content="Sites, automações e sistemas pra pequenos negócios. Projetos com Next.js, TypeScript, Python e Supabase, todos publicados e com código aberto.">
-  <meta property="og:title" content="Rafael Chagas | Desenvolvedor fullstack">
-  <meta property="og:description" content="Sites, automações e sistemas pra pequenos negócios.">
+  <title>Rafael Chagas | Desenvolvimento, automação e dados</title>
+  <meta name="description" content="Estudante de Análise e Desenvolvimento de Sistemas procurando estágio. Projetos de API, automação de planilhas, análise de dados e sistemas web, todos publicados e com código aberto.">
+  <meta property="og:title" content="Rafael Chagas | Desenvolvimento, automação e dados">
+  <meta property="og:description" content="Projetos de API, automação, análise de dados e sistemas web.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta name="theme-color" content="#16161A">
@@ -30,11 +30,11 @@
 
   <main>
     <section class="intro">
-      <h1>Sites, automações e sistemas pra pequenos negócios.</h1>
+      <h1>Sistemas, automações e análise de dados.</h1>
       <p>
-        Sou desenvolvedor fullstack em São Bernardo do Campo, SP. Trabalho com Python, JavaScript, TypeScript e SQL, e gosto de projeto que resolve
-        um problema concreto: uma agenda que não deixa marcar dois clientes no mesmo horário, um bot que responde a mesma pergunta pela
-        centésima vez no lugar da recepcionista.
+        Estudo Análise e Desenvolvimento de Sistemas na Fatec São Caetano do Sul e moro em São Bernardo do Campo, SP. Procuro estágio em
+        desenvolvimento, automação ou dados. Trabalho com Python, SQL, JavaScript e TypeScript, e gosto de projeto que resolve um problema
+        concreto: uma planilha de fechamento que levava a tarde inteira, uma agenda que não deixa marcar dois clientes no mesmo horário.
       </p>
       <p class="intro-links">
         <a href="#projetos" class="button">Ver os projetos</a>
@@ -47,6 +47,78 @@
     <section id="projetos" class="projects">
       <h2>Projetos</h2>
       <p class="section-note">Todos estão no ar e com o código aberto. As empresas são fictícias; o código e os dados de teste são de verdade.</p>
+
+      <article class="project">
+        <a href="https://api-almoxarifado.vercel.app/docs" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/api.jpg" width="1280" height="800" loading="lazy" alt="Endpoints de produtos, movimentações e relatórios na documentação da API">
+        </a>
+        <div class="about">
+          <p class="kind">API REST</p>
+          <h3>API de almoxarifado</h3>
+          <p>
+            Controle de estoque de uma empresa pequena: cadastro de produtos, entradas e saídas, alerta de estoque mínimo e relatórios.
+            Dá pra testar pela documentação interativa com as contas de demonstração.
+          </p>
+          <ul>
+            <li>Três perfis de acesso (admin, operador e leitura) com login por token JWT e senha com hash Argon2</li>
+            <li>O saldo nunca fica negativo, nem com duas saídas ao mesmo tempo. Tem teste disso no PostgreSQL</li>
+            <li>Migrations com Alembic, Docker e CI que roda os testes em SQLite e em PostgreSQL</li>
+          </ul>
+          <p class="stack">Python · FastAPI · PostgreSQL · SQLAlchemy · Docker</p>
+          <p class="links">
+            <a href="https://api-almoxarifado.vercel.app/docs" rel="noopener noreferrer" target="_blank">Abrir a documentação</a>
+            <a href="https://github.com/RafaelChagas01/api-almoxarifado" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <a href="https://consolida-planilhas.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/consolida.jpg" width="1280" height="800" loading="lazy" alt="Resultado do consolidador com faturamento por loja e linhas descartadas">
+        </a>
+        <div class="about">
+          <p class="kind">Automação de planilhas</p>
+          <h3>Consolidador de planilhas de vendas</h3>
+          <p>
+            Cada loja manda a planilha do mês de um jeito. O consolidador lê todas, corrige o que dá, separa o que não dá e devolve o
+            fechamento em Excel com resumo, gráfico e a lista das linhas descartadas com o motivo.
+          </p>
+          <ul>
+            <li>Acha o cabeçalho mesmo com título antes e entende colunas com nomes diferentes</li>
+            <li>Converte data e valor digitados como texto e confere se o total bate com quantidade x preço</li>
+            <li>Upload protegido contra arquivo falso, macro e zip bomb, com 72 testes</li>
+          </ul>
+          <p class="stack">Python · pandas · openpyxl · FastAPI</p>
+          <p class="links">
+            <a href="https://consolida-planilhas.vercel.app" rel="noopener noreferrer" target="_blank">Testar com as planilhas de exemplo</a>
+            <a href="https://github.com/RafaelChagas01/consolida-planilhas" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <a href="https://atrasos-voos-brasil.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/voos.jpg" width="1280" height="800" loading="lazy" alt="Gráfico de atrasos de voos por hora do dia">
+        </a>
+        <div class="about">
+          <p class="kind">Análise de dados</p>
+          <h3>Quando o voo atrasa no Brasil</h3>
+          <p>
+            Análise de 783 mil voos domésticos registrados pela ANAC em 12 meses. Voo das 22h atrasa cerca de 5 vezes mais que o das 6h, e
+            boa parte da diferença entre as empresas vem de Guarulhos.
+          </p>
+          <ul>
+            <li>Limpeza e análises em SQL no DuckDB, com o motivo de cada linha descartada</li>
+            <li>Relatório com gráficos, recomendações e as limitações dos dados</li>
+            <li>Testes da limpeza com uma amostra que cobre os casos problemáticos</li>
+          </ul>
+          <p class="stack">SQL · DuckDB · Python · matplotlib</p>
+          <p class="links">
+            <a href="https://atrasos-voos-brasil.vercel.app" rel="noopener noreferrer" target="_blank">Ler o relatório</a>
+            <a href="https://github.com/RafaelChagas01/atrasos-voos-brasil" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
 
       <article class="project">
         <a href="https://agenda-barbearia-navalha.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
@@ -186,8 +258,8 @@
 
     <!-- Contato -->
     <section id="contato" class="contact">
-      <h2>Vamos conversar?</h2>
-      <p>Me conta o que você precisa. Respondo com uma ideia de solução e de prazo, sem compromisso.</p>
+      <h2>Contato</h2>
+      <p>Pra uma vaga de estágio ou pra um projeto, pode me chamar por aqui.</p>
       <p class="contact-links">
         <a href="https://wa.me/5511959679219?text=Oi%20Rafael%2C%20vi%20seu%20portf%C3%B3lio" class="button" rel="noopener noreferrer" target="_blank">WhatsApp</a>
         <a href="mailto:chagas.rafa@proton.me" class="button button-line">chagas.rafa@proton.me</a>
