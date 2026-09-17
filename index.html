@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafael Chagas | Desenvolvedor fullstack</title>
+  <meta name="description" content="Sites, automações e sistemas pra pequenos negócios. Projetos com Next.js, TypeScript, Python e Supabase, todos publicados e com código aberto.">
+  <meta property="og:title" content="Rafael Chagas | Desenvolvedor fullstack">
+  <meta property="og:description" content="Sites, automações e sistemas pra pequenos negócios.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="theme-color" content="#16161A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316161A'/%3E%3Cpath d='M10 23V9h6.5a4 4 0 0 1 0 8H10m6-.2L21 23' stroke='%23F76B2F' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <a href="#" class="name">Rafael Chagas</a>
+    <nav>
+      <a href="#projetos">Projetos</a>
+      <a href="#como-trabalho">Como trabalho</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Sites, automações e sistemas pra pequenos negócios.</h1>
+      <p>
+        Sou desenvolvedor fullstack em Minas Gerais. Trabalho com Python, JavaScript, TypeScript e SQL, e gosto de projeto que resolve
+        um problema concreto: uma agenda que não deixa marcar dois clientes no mesmo horário, um bot que responde a mesma pergunta pela
+        centésima vez no lugar da recepcionista.
+      </p>
+      <p class="intro-links">
+        <a href="#projetos" class="button">Ver os projetos</a>
+        <a href="https://github.com/RafaelChagas01" rel="noopener noreferrer" target="_blank">github.com/RafaelChagas01</a>
+      </p>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="projects">
+      <h2>Projetos</h2>
+      <p class="section-note">Todos estão no ar e com o código aberto. As empresas são fictícias; o código e os dados de teste são de verdade.</p>
+
+      <article class="project">
+        <a href="https://agenda-barbearia-navalha.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/agenda.jpg" width="1280" height="800" loading="lazy" alt="Painel da barbearia com os atendimentos do dia">
+        </a>
+        <div class="about">
+          <p class="kind">Sistema com login</p>
+          <h3>Agenda para barbearia</h3>
+          <p>
+            O cliente marca serviço e horário por um link, sem criar conta. O barbeiro vê a agenda do dia no celular, marca quem já foi
+            atendido e edita serviços, preços e horário de funcionamento.
+          </p>
+          <ul>
+            <li>Uma regra no próprio banco impede dois agendamentos no mesmo horário, mesmo que dois clientes confirmem ao mesmo tempo</li>
+            <li>Cada barbearia só enxerga os próprios dados (Row Level Security, testado simulando outro usuário)</li>
+            <li>Tem conta de demonstração que volta ao original toda madrugada</li>
+          </ul>
+          <p class="stack">Next.js · TypeScript · Supabase · PostgreSQL</p>
+          <p class="links">
+            <a href="https://agenda-barbearia-navalha.vercel.app" rel="noopener noreferrer" target="_blank">Abrir a demonstração</a>
+            <a href="https://github.com/RafaelChagas01/agenda-barbearia" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <a href="https://loja-torra-alta.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/loja.jpg" width="1280" height="800" loading="lazy" alt="Página inicial da loja de café Torra Alta">
+        </a>
+        <div class="about">
+          <p class="kind">Loja virtual</p>
+          <h3>Torra Alta</h3>
+          <p>
+            Loja de uma torrefação de café com página de produto, carrinho, cálculo de frete e pagamento pelo Stripe, em modo de teste.
+          </p>
+          <ul>
+            <li>O preço é sempre calculado no servidor. Mexer no carrinho pelo navegador não muda o valor cobrado</li>
+            <li>Confirmação de pagamento por webhook com verificação de assinatura</li>
+            <li>22 testes automatizados, incluindo tentativa de fraude no preço</li>
+          </ul>
+          <p class="stack">Next.js · TypeScript · Stripe</p>
+          <p class="links">
+            <a href="https://loja-torra-alta.vercel.app" rel="noopener noreferrer" target="_blank">Abrir a loja</a>
+            <a href="https://github.com/RafaelChagas01/loja-torra-alta" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <a href="https://bot-atendimento-clinica.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/bot.jpg" width="1280" height="800" loading="lazy" alt="Chat do bot de atendimento com um pedido de consulta no painel da recepção">
+        </a>
+        <div class="about">
+          <p class="kind">Automação com IA</p>
+          <h3>Bot de atendimento para clínica</h3>
+          <p>
+            Atende no WhatsApp: tira dúvidas sobre convênio, preço e horário, anota pedidos de consulta e passa a conversa pra recepção
+            quando precisa de uma pessoa.
+          </p>
+          <ul>
+            <li>A IA só responde com base nas informações da clínica e diz quando não sabe, em vez de inventar</li>
+            <li>Sem chave de IA, funciona com busca local. A demonstração roda assim, sem custo</li>
+            <li>Webhook do WhatsApp com verificação de assinatura e 43 testes</li>
+          </ul>
+          <p class="stack">Python · FastAPI · API do Claude · WhatsApp Cloud API</p>
+          <p class="links">
+            <a href="https://bot-atendimento-clinica.vercel.app" rel="noopener noreferrer" target="_blank">Conversar com o bot</a>
+            <a href="https://github.com/RafaelChagas01/bot-atendimento-clinica" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <a href="https://rafaelchagas01.github.io/quanto-ta-a-gasolina/" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/gasolina.jpg" width="1280" height="800" loading="lazy" alt="Painel com preço dos combustíveis em Belo Horizonte">
+        </a>
+        <div class="about">
+          <p class="kind">Coleta de dados e painel</p>
+          <h3>Quanto tá a gasolina?</h3>
+          <p>
+            Baixa a pesquisa semanal de preços da ANP, que sai em planilhas, e transforma num painel com o preço dos combustíveis em
+            385 cidades, histórico e se compensa abastecer com etanol.
+          </p>
+          <ul>
+            <li>Atualiza sozinho duas vezes por semana pelo GitHub Actions</li>
+            <li>Lida com planilhas com nome fora do padrão e valida cada linha antes de publicar</li>
+          </ul>
+          <p class="stack">Python · GitHub Actions · JavaScript</p>
+          <p class="links">
+            <a href="https://rafaelchagas01.github.io/quanto-ta-a-gasolina/" rel="noopener noreferrer" target="_blank">Ver o painel</a>
+            <a href="https://github.com/RafaelChagas01/quanto-ta-a-gasolina" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <a href="https://mesa14-landing.vercel.app" class="shot" rel="noopener noreferrer" target="_blank">
+          <img src="img/mesa14.jpg" width="1280" height="800" loading="lazy" alt="Landing page do cardápio digital Mesa14">
+        </a>
+        <div class="about">
+          <p class="kind">Landing page</p>
+          <h3>Mesa14</h3>
+          <p>
+            Página de venda de um cardápio digital por QR Code, escrita pra dono de restaurante pequeno, com formulário de contato.
+          </p>
+          <ul>
+            <li>HTML e Tailwind, sem framework, carrega rápido no celular</li>
+            <li>Formulário com validação e proteção contra robô</li>
+          </ul>
+          <p class="stack">HTML · Tailwind CSS · JavaScript</p>
+          <p class="links">
+            <a href="https://mesa14-landing.vercel.app" rel="noopener noreferrer" target="_blank">Abrir a página</a>
+            <a href="https://github.com/RafaelChagas01/mesa14-landing" rel="noopener noreferrer" target="_blank">Código</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Como trabalho -->
+    <section id="como-trabalho" class="process">
+      <h2>Como trabalho</h2>
+      <div class="process-body">
+        <p>
+          Antes de escrever código, eu entendo o que precisa ser resolvido e mando uma proposta por escrito com o que entra, o prazo e
+          o valor. Se algo mudar no caminho, a gente combina antes.
+        </p>
+        <p>
+          Durante o projeto você acompanha por um link de teste, não só no final. No fim, o código fica no seu GitHub, com um README
+          explicando como rodar e publicar, pra você não depender de mim.
+        </p>
+        <p>
+          Segurança não fica pra depois: validação de dados no servidor, permissões no banco e testes automatizados fazem parte de todos os
+          projetos acima.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+      <h2>Vamos conversar?</h2>
+      <p>Me conta o que você precisa. Respondo com uma ideia de solução e de prazo, sem compromisso.</p>
+      <p class="contact-links">
+        <a href="https://github.com/RafaelChagas01" class="button" rel="noopener noreferrer" target="_blank">GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Rafael Chagas, 2026. Este site é HTML e CSS, sem framework.</p>
+  </footer>
+
+</body>
+</html>
