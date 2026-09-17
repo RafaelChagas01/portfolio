@@ -244,10 +244,26 @@ main,
   color: #FFFFFF;
 }
 
-.contact-links {
+.contact .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-bottom: 18px;
+}
+
+.contact .button-line {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #5E6166;
+}
+
+.contact .button-line:hover {
+  border-color: var(--accent);
+}
+
+.contact .contact-other {
+  font-size: 15px;
+  margin: 0;
 }
 
 .foot {
